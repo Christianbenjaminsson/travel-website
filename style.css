@@ -109,6 +109,13 @@ main .destination {
     border-radius: 10px;
     width: 320px;
     height: 280px;
+    cursor: pointer;
+}
+
+main .destination:hover {
+    background: #D5E8D4;
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
 }
 
 main .destination img {
