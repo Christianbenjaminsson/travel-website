@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFFFFF;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+    font-weight: bold;
+}
+
+h1, h2, h3 {
+    color: #FFB570;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    background: #F5F5F5;
+    padding: 15px;
+}
+
+header .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 75%;
+} 
+
+header li {
+    margin: 0 30px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
