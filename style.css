@@ -25,6 +25,12 @@ h3 {
     font-weight: bold;
 }
 
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+    font-weight: bold;
+}
+
 h1, h2, h3 {
     color: #FFB570;
 }
@@ -123,10 +129,12 @@ main .two {
     grid-area: 1 / 3 / 2 / 4;
  }
 
+ main .destination h4 {
+    margin: 0.5em 0;
+    text-align: center;
+ }
+
  main a {
-    font-size: 1.17em;
-    margin: 1em 0;
-    font-weight: bold;
     color: #FFB570;
     text-decoration: none;
     text-align: center;
@@ -136,5 +144,5 @@ main .two {
     text-decoration: underline;
  }
  main .description {
-     text-align: 
+     text-align: center;
  }
