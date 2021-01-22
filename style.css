@@ -4,6 +4,7 @@
 
 body {
     background: #FFFFFF;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 h1 {
@@ -29,13 +30,29 @@ h1, h2, h3 {
 }
 
 header {
-    position: fixed;
+    position: center;
     display: flex;
     justify-content: space-between;
     height: 100px;
     width: 100%;
-    background: #F5F5F5;
+    background: #EDEDED;
     padding: 15px;
+}
+
+#header__logo {
+    background-color: #ff8177;
+    background-image: linear-gradient(to right, #fdc830 0%, #f37335 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 20px;
 }
 
 header .links {
@@ -50,9 +67,10 @@ header li {
 }
 
 header a {
-    text-decoration: none;
+    font-size: 18px;
+    color: #000000;
 }
 
 header a:hover {
-    text-decoration: underline;
+    text-decoration: underline 2px solid black;
 }
