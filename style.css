@@ -153,3 +153,20 @@ main .two {
  main .description {
      text-align: center;
  }
+
+ /*Footer Section*/
+ footer {
+    position: center;
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    height: 120px;
+    border-top: 1px solid black;
+    padding: 10px 10px 10px 10px;
+ }
+
+ footer ul {
+    display: flex;
+    flex-direction: column;
+    
+} 
