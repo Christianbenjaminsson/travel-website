@@ -99,7 +99,7 @@ main .grid {
     padding: 30px 15px;
     display: grid;
     grid-template: repeat(3, 1fr) / repeat (3, 1fr);
-    gap: 10px 15px;
+    gap: 50px 15px;
     justify-items: center;
     align-items: start;
 }
@@ -148,11 +148,54 @@ main .two {
  }
 
  main a:hover {
+    color: #E09249;
     text-decoration: underline;
  }
+
  main .description {
      text-align: center;
  }
+
+ main .main-form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     min-width: 400px;
+     max-width: 800px;
+     margin: 50px;
+     padding: 20px;
+ }
+
+ main .field {
+     width: 75%;
+ }
+
+ main .main-form input[type=text] {
+     background:  #EDEDED;
+     width: 80%;
+     font-size: 1em;
+     margin: 5px 0;
+ }
+
+ main textarea {
+     width: 75%;
+     height: 80px;
+     margin: 5px 0;
+     background: #EDEDED;
+ }
+
+ main .main-form input[type=submit] {
+    background-color: #FFB570;
+    border-radius: 5px;
+    font-size: 1em; 
+    margin: 10px 0;
+    width: 100px;
+ }
+
+ main .main-form input[type=submit]:hover {
+     background-color: #E09249;
+     border-radius: 5px;
+}
 
  /*Footer Section*/
  footer {
