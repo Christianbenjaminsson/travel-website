@@ -221,7 +221,10 @@ main .two {
      border-radius: 5px;
 }
 
-.info__destination {
+/*Destination Pages*/
+.destination__info {
+    position: relative;
+    top: 110px;
     padding: 10px 10px 10px;
     margin-left: 30px;
     width: 700px;
@@ -230,12 +233,32 @@ main .two {
 
 .mapouter {
     float: left;
-    margin-left: 50px;
-    margin-top: 80px;
+    margin-left: 90px;
+    margin-top: 180px;
+    margin-bottom: 70px;
     position: relative;
-    text-align: right;
-    height:300px;
-    width:400px;
+}
+
+/*Destination About-section*/
+.about__section {
+    width: 100%;
+    position: relative;
+    margin-left: 30px;
+    width:  1000px;
+    display: flex;
+}
+
+fieldset {
+    background-color: #EDEDED;
+    padding-top: 10px;
+  }
+
+ul div {
+    float: left;
+}
+
+.about__right {
+    margin-left: 250px;
 }
 
  /*Footer Section*/
