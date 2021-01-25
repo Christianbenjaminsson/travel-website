@@ -221,6 +221,23 @@ main .two {
      border-radius: 5px;
 }
 
+.info__destination {
+    padding: 10px 10px 10px;
+    margin-left: 30px;
+    width: 700px;
+    float: left;
+}
+
+.mapouter {
+    float: left;
+    margin-left: 50px;
+    margin-top: 80px;
+    position: relative;
+    text-align: right;
+    height:300px;
+    width:400px;
+}
+
  /*Footer Section*/
  footer {
     display: flex;
