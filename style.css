@@ -180,10 +180,14 @@ main .two {
      text-align: center;
  }
 
+ main .destination-input {
+    padding: 50px 15px 15px 30px;
+ }
+
  main .main-form {
      display: flex;
      flex-direction: column;
-     align-items: center;
+     align-items: flex-end;
      min-width: 400px;
      max-width: 800px;
      margin: 50px;
@@ -191,7 +195,17 @@ main .two {
  }
 
  main .field {
-     width: 75%;
+     display: flex;
+     flex-direction: row;
+     align-items: space-between;
+     justify-items: center;
+     width: 100%;
+ }
+
+ main .main-form label {
+     text-align: right;
+     flex-basis: 20%;
+     padding: 10px 5px 0 0; 
  }
 
  main .main-form input[type=text] {
@@ -202,7 +216,7 @@ main .two {
  }
 
  main textarea {
-     width: 75%;
+     width: 80%;
      height: 80px;
      margin: 5px 0;
      background: #EDEDED;
