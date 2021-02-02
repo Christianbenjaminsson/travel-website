@@ -110,12 +110,27 @@ main, footer {
 main .info {
     padding: 25px;
     width: 1200px;
+    height: 400px;
 }
 
 main .info p {
+    position: relative;
+    z-index: 2;
     text-align: justify;
     line-height: 1.2em;
     padding: 10px 100px 10px 50px;
+}
+
+main .info::before {
+    content: '';
+    position: absolute;
+    width: 1200px;
+    height: 400px;
+    z-index: 1;
+    background-image: url('images/airplane.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.2;
 }
 
 main .grid {
@@ -180,7 +195,7 @@ main .two {
      text-align: center;
  }
 
- main .destination-input {
+ main #main-input {
     padding: 50px 15px 15px 30px;
  }
 
