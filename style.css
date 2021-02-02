@@ -159,7 +159,8 @@ main .destination:hover {
 
 main .destination img {
     display: block;
-    max-width: 320px;
+    width: 320px;
+    height: 200px;
     margin: 0 auto;
     border-radius: 10px;
 }
