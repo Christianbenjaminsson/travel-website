@@ -252,6 +252,16 @@ main .two {
      border-radius: 5px;
 }
 
+header #icon {
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
 /*Destination Pages*/
 .destination__info {
     position: relative;
@@ -306,4 +316,39 @@ ul div {
     display: flex;
     flex-direction: column;
     
-} 
+}
+
+@media screen and (max-width: 760px) {
+    header #icon {
+        display: block;
+      }
+    
+      header ul {
+        position: fixed;
+        width: 80%;
+        height: 100vh;
+        background-color: #EDEDED;
+        top: -1000px;
+        text-align: center;
+        transition: all 0.5s;
+      }
+    
+      header li {
+        display: block;
+        margin-right: 50px 0;
+        line-height: 30px;
+      }
+    
+      header a {
+        font-size: 20px;
+      }
+    
+      a.active,a:hover {
+        border: none;
+        color: sandybrown;
+      }
+    
+      header ul.show {
+        top: 0;
+      }
+}
