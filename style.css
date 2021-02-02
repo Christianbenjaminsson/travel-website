@@ -220,6 +220,7 @@ main .two {
      height: 80px;
      margin: 5px 0;
      background: #EDEDED;
+     resize: vertical;
  }
 
  main .main-form input[type=submit] {
