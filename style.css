@@ -102,6 +102,12 @@ header a:hover {
     text-decoration: underline 2px solid black;
 }
 
+header select {
+    height: 2rem;
+    border-radius: 5px;
+    margin: 20px 25px 0 0;
+}
+
 main, footer {
     position: relative;
     top: 100px;
@@ -239,7 +245,7 @@ main .two {
      resize: vertical;
  }
 
- main .main-form input[type=submit] {
+ main .main-form input[type=button] {
     background-color: #FFB570;
     border-radius: 5px;
     font-size: 1em; 
@@ -247,7 +253,7 @@ main .two {
     width: 100px;
  }
 
- main .main-form input[type=submit]:hover {
+ main .main-form input[type=button]:hover {
      background-color: #E09249;
      border-radius: 5px;
 }

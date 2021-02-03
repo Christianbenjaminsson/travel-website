@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,24 +20,51 @@
   <header>
     <a href="#home" id="header__logo">TRAVEL</a>
     <ul class="links">
-      <li><a href="">Menu 1</a></li>
-      <li><a href="">Menu 2</a></li>
-      <li><a href="">Menu 3</a></li>
-      <li><a href="">Menu 4</a></li>
+      <li><a href="">
+        <span class="sv">Menu 1</span>
+        <span class="en">Menu 1</span>
+      </a></li>
+      <li><a href="">
+        <span class="sv">Menu 2</span>
+        <span class="en">Menu 2</span>
+      </a></li>
+      <li><a href="">
+        <span class="sv">Menu 3</span>
+        <span class="en">Menu 3</span>
+      </a></li>
+      <li><a href="">
+        <span class="sv">Menu 4</span>
+        <span class="en">Menu 4</span>
+      </a></li>
     </ul>
     <label for="icon" id="icon">
       <i class="fas fa-bars"></i>
     </label>
+    <select id="lang-switch">
+      <option value="sv" selected>Svenska</option>
+      <option value="en">English</option>
+    </select>
   </header>  
   <main>
     <div class="info">
-      <h2>Restips</h2>
-      <p>Här delar vi med oss av våra favoritresmål. Vissa är stora städer,
-        andra är små ställen som inte är lika kända men som ändå är värda ett besök!
+      <h2>
+        <span class="sv">Restips</span>
+        <span class="en">Destinations</span>
+      </h2>
+      <p>
+        <span class="sv">Här delar vi med oss av våra favoritresmål. Vissa är stora städer,
+          andra är små ställen som inte är lika kända men som ändå är värda ett besök!</span>
+        <span class="en">Here are some of our favourite destinations. Some are big cities, others 
+          are tiny places that are less known but still worth visiting!</span>
       </p>
-      <p>Vi tar gärna emot ditt förslag på resmål, helst med en motivering varför 
-        just den platsen är värd ett besök. Lämna ditt förslag 
-        <a href="#name" class="destination-input">här</a>
+      <p>
+        <span class="sv">Vi tar gärna emot ditt förslag på resmål, helst med en motivering varför 
+          just den platsen är värd ett besök. Lämna ditt förslag 
+          <a href="#name" class="destination-input">här</a></span>
+        <span class="en">We would love your suggestion of destinations, preferably with a reason
+          why this place is worth visiting. Leave your suggestion 
+          <a href="#name" class="destination-input">here</a>
+        </span>
       </p>
     </div>
     <div class="grid">
@@ -45,13 +72,19 @@
         <img src="images/newyork.jpg">
         <h4><a href="destinations/new-york.html">New York</a></h4>
         <br>
-        <p class="description">Storstädernas storstad</p>
+        <p class="description">
+          <span class="sv">Storstädernas storstad</span>
+          <span class="en">The greatest metropolis</span>
+        </p>
       </div>
       <div class="destination two">
         <img src="images/stockholm.jpg">
         <h4><a href="destinations/Stockholm.html">Stockholm</a></h4>
         <br>
-        <p class="description">Sveriges huvudstad</p>
+        <p class="description">
+          <span class="sv">Sveriges huvudstad</span>
+          <span class="en">The capital of Sweden</span>
+        </p>
       </div>
       <div class="destination three">
         <img src="images/beach.jpeg">
@@ -63,38 +96,61 @@
         <img src="images/beach.jpeg">
         <h4><a href="">Destination 1</a></h4>
         <br>
-        <p class="description">Lorem ipsum dolor sit amet.</p>
+        <p class="description">'
+          <span class="sv">Lorem ipsum dolor sit amet.</span>
+          <span class="en">Lorem ipsum dolor sit amet.</span>
+        </p>
       </div>
       <div class="destination">
         <img src="images/beach.jpeg">
         <h4><a href="">Destination 1</a></h4>
         <br>
-        <p class="description">Lorem ipsum dolor sit amet.</p>
+        <p class="description">
+          <span class="sv">Lorem ipsum dolor sit amet.</span>
+          <span class="en">Lorem ipsum dolor sit amet.</span>
+        </p>
       </div>
       <div class="destination">
         <img src="images/beach.jpeg">
         <h4><a href="">Destination 1</a></h4>
         <br>
-        <p class="description">Lorem ipsum dolor sit amet.</p>
+        <p class="description">
+          <span class="sv">Lorem ipsum dolor sit amet.</span>
+          <span class="en">Lorem ipsum dolor sit amet.</span>
+        </p>
       </div>
     </div>
     <div id="main-input">
-      <h3>Lämna förslag på resmål <a class="destination-input">här</a>:</h3>
+      <h3>
+        <span class="sv">Lämna förslag på resmål <a class="destination-input">här</a>:</span>
+        <span class="en">Enter your destination <a class="destination-input">here</a>:</span>
+      </h3>
       <form action="" class="main-form">
         <div class="field">
-          <label for="name">Namn:</label>
+          <label for="name">
+            <span class="sv">Namn:</span>
+            <span class="en">Name:</span>
+          </label>
           <input type="text" id="name" name="name">
         </div>
         <div class="field">
-          <label for="email">Email:</label>
+          <label for="email">
+            <span class="sv">Email:</span>
+            <span class="en">Email address:</span>
+          </label>
           <input type="text" id="email" name="email">
         </div>
         <div class="field">
-          <label for="suggestion">Förslag på resmål:</label>
+          <label for="suggestion">
+            <span class="sv">Förslag på resmål:</span>
+            <span class="en">Your destination:</span>
+          </label>
           <input type="text" id="suggestion" name="suggestion">
         </div>
-        <textarea placeholder="Varför är ditt resmål så bra?"></textarea>
-        <input type="submit">
+        <textarea class="sv" placeholder="Varför är ditt resmål så bra?"></textarea>
+        <textarea class="en" placeholder="Why should we visit your destination?"></textarea>
+        <input class="sv" type="button" value="Skicka">
+        <input class="en" type="button" value="Submit">
       </form>
     </div>
     
