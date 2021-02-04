@@ -291,21 +291,17 @@ header #icon {
     width: 100%;
     position: relative;
     margin-left: 30px;
-    width:  1000px;
     display: flex;
 }
 
 fieldset {
     background-color: #EDEDED;
-    padding-top: 10px;
-  }
-
-ul div {
-    float: left;
+    width: 650px;
 }
 
-.about__right {
-    margin-left: 250px;
+td {
+   width: 200px;
+   padding: 2px;
 }
 
  /*Footer Section*/
