@@ -9,13 +9,32 @@
 </head>
 <body>
   <header>
-    <a href="../index.html" id="header__logo">TRAVEL</a>
+    <a href="#home" id="header__logo">TRAVEL</a>
     <ul class="links">
-      <li><a href="./stockholm.html">Stockholm</a></li>
-      <li><a href="./new-york.html">Menu 2</a></li>
-      <li><a href="">Menu 3</a></li>
-      <li><a href="">Menu 4</a></li>
+      <li><a href="">
+        <span class="sv">Menu 1</span>
+        <span class="en">Menu 1</span>
+      </a></li>
+      <li><a href="">
+        <span class="sv">Menu 2</span>
+        <span class="en">Menu 2</span>
+      </a></li>
+      <li><a href="">
+        <span class="sv">Menu 3</span>
+        <span class="en">Menu 3</span>
+      </a></li>
+      <li><a href="">
+        <span class="sv">Menu 4</span>
+        <span class="en">Menu 4</span>
+      </a></li>
     </ul>
+    <label for="icon" id="icon">
+      <i class="fas fa-bars"></i>
+    </label>
+    <select class="lang-switch">
+      <option value="sv" selected>Svenska</option>
+      <option value="en">English</option>
+    </select>
   </header> 
   <div class="destination__info">
     <h2>Stockholm</h2>
@@ -76,6 +95,10 @@
       <li>Email: email@company.org</li>
     </ul>
   </footer>
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js">
+</script> 
+  <script src='main.js'></script>
 </body>
 </html>
 </html>
