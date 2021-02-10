@@ -26,25 +26,25 @@ body {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2rem;
     margin: 0.67em 0;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin: 0.83em 0;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 1.17em;
+    font-size: 1.17rem;
     margin: 1em 0;
     font-weight: bold;
 }
 
 h4 {
-    font-size: 1em;
+    font-size: 1rem;
     margin: 1.33em 0;
     font-weight: bold;
 }
@@ -61,6 +61,20 @@ header {
     width: 100%;
     background: #EDEDED;
     padding: 15px;
+    z-index: 10;
+}
+
+header .side {
+    background: #EDEDED;
+}
+
+header .center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #EDEDED;
     z-index: 10;
 }
 
@@ -85,7 +99,6 @@ header .links {
     flex-direction: row;
     justify-content: end;
     width: 75%;
-    padding-top: 25px;
 } 
 
 header li {
@@ -105,7 +118,8 @@ header a:hover {
 header select {
     height: 2rem;
     border-radius: 5px;
-    margin: 20px 25px 0 0;
+    margin-right: 25px;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 main, footer {
@@ -113,10 +127,31 @@ main, footer {
     top: 100px;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.side {
+    background-color: #E09249;
+    flex-basis: 0px;
+    flex-grow: 2;
+}
+
+.center {
+    flex-basis: 1200px;
+    flex-grow: 0;
+}
+
 main .info {
-    padding: 25px;
-    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px;
+    max-width: 1200px;
     height: 400px;
+    text-align: center;
 }
 
 main .info p {
@@ -124,7 +159,9 @@ main .info p {
     z-index: 2;
     text-align: justify;
     line-height: 1.2em;
-    padding: 10px 100px 10px 50px;
+    padding: 10px 50px;
+    max-width: 1200px;
+    text-align: center;
 }
 
 main .info::before {
@@ -139,14 +176,14 @@ main .info::before {
     opacity: 0.2;
 }
 
-main .grid {
-    width: 1200px;
+main .container {
+    max-width: 1200px;
     padding: 30px 15px;
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat (3, 1fr);
-    gap: 50px 15px;
+    display: flex;
     justify-items: center;
+    justify-content: center;
     align-items: start;
+    flex-wrap: wrap;
 }
 
 main .destination {
@@ -154,7 +191,9 @@ main .destination {
     border-radius: 10px;
     width: 320px;
     height: 280px;
+    margin: 25px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 main .destination:hover {
@@ -168,22 +207,10 @@ main .destination img {
     width: 320px;
     height: 200px;
     margin: 0 auto;
-    border-radius: 10px;
 }
-
-main .one {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-main .two {
-    grid-area: 1 / 2 / 2 / 3;
-}
- main .three {
-    grid-area: 1 / 3 / 2 / 4;
- }
 
  main .destination h4 {
-    margin: 0.5em 0;
+    margin: 1em 0 0.5em 0;
     text-align: center;
  }
 
@@ -203,46 +230,77 @@ main .two {
  }
 
  main #main-input {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
     padding: 50px 15px 15px 30px;
  }
 
  main .main-form {
-     display: flex;
-     flex-direction: column;
-     align-items: flex-end;
-     min-width: 400px;
-     max-width: 800px;
-     margin: 50px;
-     padding: 20px;
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     grid-template-rows: repeat(3, 1fr) 5fr 1fr;
+     align-items: center;
+     width: 760px;
+     height: 300px;
+     margin: 30px 50px 50px 0;
  }
 
- main .field {
-     display: flex;
-     flex-direction: row;
-     align-items: space-between;
-     justify-items: center;
-     width: 100%;
+ #name-label {
+     grid-area: 1 / 1 / 2 / 2;
+ }
+
+ #name {
+    grid-area: 1/ 2/ 2 / 6;
+ }
+
+ #email-label {
+     grid-area: 2 / 1 / 3 / 2;
+ }
+
+ #email {
+     grid-area: 2 / 2 / 3 / 6;
+ }
+
+ #suggestion-label {
+    grid-area: 3 / 1 / 4 / 2;
+ }
+
+ #suggestion {
+     grid-area: 3 / 2 / 4 / 6;
+ }
+
+ #comment {
+     grid-area: 4 / 2 / 5 / 6;
+ }
+
+ #buttons {
+     grid-area: 5 / 3 / 6 / 5;
+     justify-self: center;
  }
 
  main .main-form label {
      text-align: right;
      flex-basis: 20%;
+     flex-shrink: 0;
      padding: 10px 5px 0 0; 
  }
 
  main .main-form input[type=text] {
      background:  #EDEDED;
-     width: 80%;
+     flex-basis: 80%;
      font-size: 1em;
      margin: 5px 0;
  }
 
  main textarea {
-     width: 80%;
-     height: 80px;
+     width: 100%;
+     height: 120px;
      margin: 5px 0;
      background: #EDEDED;
-     resize: vertical;
+     resize: none;
+     border: 2px solid;
+     border-color:  black rgb(118, 118, 118) rgb(116, 118, 118) black;
  }
 
  main .main-form input[type=button] {
@@ -321,6 +379,7 @@ td {
 }
 
 @media screen and (max-width: 760px) {
+
     header #icon {
         display: block;
       }
@@ -353,4 +412,53 @@ td {
       header ul.show {
         top: 0;
       }
+
+      main .main-form  {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 1fr) 5fr 1fr;
+        align-items: center;
+        width: 400px;
+        height: 350px;
+        margin: 20px 5px;
+      }
+
+      #name-label {
+        grid-area: 1 / 1 / 2 / 3;
+      }
+   
+      #name {
+        grid-area: 2/ 1 / 3 / 4;
+      }
+   
+      #email-label {
+        grid-area: 3 / 1 / 4 / 3;
+      }
+   
+      #email {
+        grid-area: 4 / 1 / 5 / 4;
+      }
+   
+      #suggestion-label {
+       grid-area: 5 / 1 / 6 / 3;
+      }
+   
+      #suggestion {
+        grid-area: 6 / 1 / 7 / 4;
+      }
+   
+      #comment {
+        grid-area: 7 / 1 / 8 / 4;
+      }
+   
+      #buttons {
+        grid-area: 8 / 2 / 9 / 3;
+        justify-self: center;
+      }
+
+      main .main-form label {
+        text-align: left;
+        padding: 0;
+        align-self: flex-end;
+    }
+      
 }
