@@ -20,7 +20,9 @@ $(document).ready(() => {
         $('#name').focus();
     });
 
-    
+    $('#icon').click(function(){
+        $('ul').toggleClass('show');
+    })
 })
 
 
