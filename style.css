@@ -313,7 +313,7 @@ main textarea {
   border-color: black rgb(118, 118, 118) rgb(116, 118, 118) black;
 }
 
-main .main-form input[type="button"] {
+input[type="button"] {
   background-color: #ffb570;
   border-radius: 5px;
   font-size: 1em;
@@ -321,9 +321,23 @@ main .main-form input[type="button"] {
   width: 100px;
 }
 
-main .main-form input[type="button"]:hover {
+input[type="button"]:hover {
   background-color: #e09249;
   border-radius: 5px;
+}
+
+#user-comments {
+  display: grid;
+  grid-template-columns: 100px 100px 1fr;
+  margin: 20px;
+}
+
+.comment-name {
+  font-style: italic;
+}
+
+.comment-destination {
+  font-weight: bold;
 }
 
 header #icon {
@@ -547,14 +561,18 @@ footer ul {
     display: block;
   }
 
-fieldset {
-  width: 300px;
+  fieldset {
+    width: 300px;
+  }
+
 }
 
 /* Responsive */
 @media screen and (max-width: 600px) {
+
   .map__iframe {
     width: 400px;
     height: 250px;
   }
+
 }

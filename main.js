@@ -23,6 +23,19 @@ $(document).ready(() => {
     $('#icon').click(function(){
         $('ul').toggleClass('show');
     })
+
+    $('.suggestion-button').on('click', function() {
+        
+        const newName = $('#name').val();
+        const newDestination = $('#suggestion').val();
+        const newComment = $('#comment').val();
+        
+        $('#user-comments').append('<span class="comment-name">'+newName+'</span>');
+        $('#user-comments').append('<span class="comment-destination">'+newDestination+'</span>');
+        $('#user-comments').append('<span class="comment-why">'+newComment+'</span>');
+
+        $(this).closest('form').find("input[type=text], textarea").val("");
+    })
 })
 
 
