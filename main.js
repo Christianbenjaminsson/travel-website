@@ -9,8 +9,12 @@ $(document).ready(() => {
         $('.sv').hide();
         if (lang === 'en') {
             $('.en').show();
+            $('#destination__input-subjects').removeAttr('list');
+            $('#destination__input-subjects').attr('list', 'destination__subjects-en');
         } else {
             $('.sv').show();
+            $('#destination__input-subjects').removeAttr('list');
+            $('#destination__input-subjects').attr('list', 'destination__subjects-sv');
         }
     });
 
