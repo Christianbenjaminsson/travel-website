@@ -26,7 +26,15 @@ $(document).ready(() => {
 
     $('#icon').click(function(){
         $('ul').toggleClass('show');
-    })
+    });
+
+    $('#destination__rules').click(function() {
+        window.open('/rules.html', 'popup', 'height=500,width=400,toolbar=no');
+    });
+
+    $('#destination__rules-en').click(function() {
+        window.open('/rules.html', 'popup', 'height=500,width=400,toolbar=no');
+    });
 })
 
 
