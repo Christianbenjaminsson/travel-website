@@ -207,7 +207,6 @@ main .destination {
 }
 
 main .destination:hover {
-  background: #d5e8d4;
   transform: scale(1.075);
   transition: 0.3s ease-in;
 }
@@ -297,7 +296,6 @@ main .main-form label {
 }
 
 main .main-form input[type="text"] {
-  background: #ededed;
   flex-basis: 80%;
   font-size: 1em;
   margin: 5px 0;
@@ -307,10 +305,8 @@ textarea {
   width: 100%;
   height: 120px;
   margin: 5px 0;
-  background: #ededed;
   resize: none;
-  border: 2px solid;
-  border-color: black rgb(118, 118, 118) rgb(116, 118, 118) black;
+  
 }
 
 input[type="button"] {
@@ -322,8 +318,9 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-  background-color: #e09249;
   border-radius: 5px;
+  transform: scale(1.1);
+  transition: 0.3s ease-in;
 }
 
 header #icon {
@@ -420,7 +417,7 @@ header #icon {
 }
 
 /*Destination About-section*/
-.about__section {
+.destination__about-section {
   width: auto;
   margin-left: 30px;
 }
@@ -429,6 +426,10 @@ fieldset {
   width: 680px;
   border-color: lightgrey;
   border-style: solid;
+}
+
+legend {
+  padding: 0 7px 0 7px;
 }
 
 .table__small {
@@ -453,6 +454,23 @@ footer {
 footer ul {
   display: flex;
   flex-direction: column;
+}
+
+/* About Section */
+.about__container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.about__section {
+  position: relative;
+  top: 110px;
+  padding: 10px 10px 10px;
+  margin-left: 30px;
+  max-width: 700px;
+  float: left;
 }
 
 /* Responsive */
