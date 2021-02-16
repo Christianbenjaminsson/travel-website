@@ -445,6 +445,22 @@ header #icon {
   justify-self: center;
 }
 
+#destination__user-comments {
+  display: grid;
+  grid-template-columns: 100px 100px 1fr;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  column-gap: 15px;
+  row-gap: 40px;
+  max-width: 700px;
+  margin: 20px;
+}
+
+.destination__comment-why {
+  max-width: 450px;
+  overflow: hidden;
+}
+
 /*Destination About-section*/
 .destination__about-section {
   width: auto;
@@ -617,7 +633,7 @@ footer ul {
     float: none;
   }
 
-  .destination__about__section {
+  .destination__about-section {
     margin-left: 0px;
   }
 }
