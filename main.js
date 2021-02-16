@@ -29,6 +29,42 @@ $(document).ready(() => {
         window.open('../rules.html', 'popup', 'height=500,width=400,toolbar=no');
     });
 
+    $('.load-file').on('click', () => {
+        input = document.getElementById('file-input');
+
+        if(!input) {
+            alert('Filen kan inte hittas.');
+        } else if (!input.files[0]){
+            alert('Du måste välja en fil att ladda upp');
+        } else {
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.onload = event => {
+                let lines = event.target.result;
+                alert(lines);
+                const newDestinations = JSON.parse(lines);
+                alert(newDestinations.destinations[0].description_sv);
+                newDestinations.destinations.forEach(destination => {
+
+                    const newImage = destination.image;
+                    const newLink = destination.link;
+                    const newNameSv = destination.name_sv;
+                    const newNameEn = destination.name_en;
+                    const newDescriptionSv = destination.description_sv;
+                    const newDescriptionEn = destination.description_en;
+
+                    const newDiv = document.createElement("div");
+                    newDiv.className = "destination";
+                    newDiv.innerHTML = '<img src='+newImage+'><h4><span class="sv"><a href='+newLink+'>'+newNameSv+'</a></span><span class="en"><a href='+newLink+'>'+newNameEn+'</a></span></h4><p class="description"><span class="sv">'+newDescriptionSv+'</span><span class="en">'+newDescriptionEn+'</span></p>';
+                    document.getElementById('container').append(newDiv);
+                    setLanguage(localStorage.getItem('lang'));
+                });
+            };
+            reader.readAsText(file);
+
+        }
+    });
+
     const posts = [
         {
             name: "Helene",
@@ -105,4 +141,5 @@ const setLanguage = language => {
         localStorage.setItem('lang', 'sv');
     }
 };
+
 

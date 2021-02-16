@@ -57,7 +57,7 @@
           </span>
         </p>
       </div>
-      <div class="container">
+      <div id="container">
         <div class="destination">
           <img src="images/newyork.jpg">
           <h4>
@@ -107,6 +107,15 @@
           </p>
         </div>
       </div>
+      <form id="json-upload">
+        <p>
+          <span class="sv">Välj JSON-fil att ladda upp</span>
+          <span class="en">Please choose the JSON-file to load</span>
+        </p>
+        <input type="file" id="file-input">
+        <input type="button" class="load-file sv" value="Ladda upp">
+        <input type="button" class="load-file en" value="Load file">
+      </form>
       <div id="viewer-favourites">
         <h3>
           <span class="sv">Tips från läsarna</span>
@@ -162,6 +171,6 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
   <script src="https://kit.fontawesome.com/121d020242.js"></script>
-  <script src='main.js'></script> 
+  <script src='main.js'></script>
 </body>
 </html>
