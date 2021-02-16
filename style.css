@@ -290,8 +290,6 @@ main .main-form {
 
 main .main-form label {
   text-align: right;
-  flex-basis: 20%;
-  flex-shrink: 0;
   padding: 10px 5px 0 0;
 }
 
@@ -531,7 +529,7 @@ footer ul {
   }
 
   .destination__form {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr repeat(2, 2fr);
     grid-template-rows: repeat(6, 1fr) 5fr 1fr 1fr;
     align-items: center;
     width: 600px;
@@ -654,9 +652,61 @@ footer ul {
 }
 
 /* Responsive */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 630px) {
   .map__iframe {
     width: 400px;
     height: 250px;
+  }
+
+  .destination__form-section {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px 15px 0px;
+  }
+
+  .destination__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr) 5fr 1fr 1fr;
+    width: 400px;
+    height: 400px;
+    margin: 15px auto;
+  }
+
+  #destination__name-label {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  #destination__input-name {
+    grid-area: 2 / 1 / 3 / 4;
+  }
+
+  #destination__email-label {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  #destination__input-email {
+    grid-area: 4 / 1 / 5 / 4;
+  }
+
+  #destination__subject-label {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+
+  #destination__input-subjects {
+    grid-area: 6 / 1 / 7 / 4;
+  }
+
+  #destination__comment {
+    grid-area: 7 / 1 / 8 / 4;
+  }
+
+  #destination__checkbox {
+    grid-area: 8 / 1 / 9 / 4;
+  }
+
+  #destination__buttons {
+    grid-area: 9 / 2 / 10 / 3;
+    justify-self: center;
   }
 }
