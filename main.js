@@ -24,24 +24,39 @@ $(document).ready(() => {
         $('ul').toggleClass('show');
     })
 
-    let names = ["Karin", "Elvira", "Namn"];
-    let destinations = ["Floda", "Grekland", "Hit och dit"];
-    let comments = ["Floda är bäst", "Jag vill till Grekland nu!", "Därför att"];
+    const posts = [
+        {
+            name: "Helene",
+            destination: "Florida",
+            comment: "Mitt favoritresmål! Är här ett par månader varje vinter och det är det bästa som finns!"
+        },
+        {
+            name: "Elvira",
+            destination: "Grekland",
+            comment: "Jag vill till Grekland nu!"
+        },
+        {
+            name: "Användare",
+            destination: "Hit och dit",
+            comment: "Därför att"
+        },
+    ];
 
-    localStorage.setItem('names', JSON.stringify(names));
-    localStorage.setItem('destinations', JSON.stringify(destinations));
-    localStorage.setItem('comments', JSON.stringify(comments));
+    if (!localStorage.getItem('posts')) {
+        localStorage.setItem('posts', JSON.stringify(posts));
+    }
+    
+    const postsToShow = JSON.parse(localStorage.getItem('posts'));
 
-    for (let i = 0; i < names.length; i++) {
-        $('#user-comments').append('<span class="comment-name">'+names[i]+'</span>');
-        $('#user-comments').append('<span class="comment-destination">'+destinations[i]+'</span>');
-        $('#user-comments').append('<span class="comment-why">'+comments[i]+'</span>');
+
+    for (let i = 0; i < postsToShow.length; i++) {
+        $('#user-comments').append('<span class="comment-name">'+postsToShow[i].name+'</span>');
+        $('#user-comments').append('<span class="comment-destination">'+postsToShow[i].destination+'</span>');
+        $('#user-comments').append('<span class="comment-why">'+postsToShow[i].comment+'</span>');
     }
 
     $('.suggestion-button').on('click', function() {
-        let currentNames = JSON.parse(localStorage.getItem('names'));
-        let currentDestinations = JSON.parse(localStorage.getItem('destinations'));
-        let currentComments = JSON.parse(localStorage.getItem('comments'));
+        let currentPosts = JSON.parse(localStorage.getItem('posts'));
 
         const newName = $('#name').val();
         const newDestination = $('#suggestion').val();
@@ -51,15 +66,17 @@ $(document).ready(() => {
         $('#user-comments').append('<span class="comment-destination">'+newDestination+'</span>');
         $('#user-comments').append('<span class="comment-why">'+newComment+'</span>');
 
-        currentNames.push(newName);
-        currentDestinations.push(newDestination);
-        currentComments.push(newComment);
+        const newPost = {
+            name: newName,
+            destination: newDestination,
+            comment: newComment
+        };
 
-        localStorage.setItem('names', JSON.stringify(currentNames));
-        localStorage.setItem('destinations', JSON.stringify(currentDestinations));
-        localStorage.setItem('comments', JSON.stringify(currentComments));
+        currentPosts.push(newPost);
+        localStorage.setItem('posts', JSON.stringify(currentPosts));
 
         $(this).closest('form').find("input[type=text], textarea").val("");
+        $('.main-form').hide();
     })
 })
 
