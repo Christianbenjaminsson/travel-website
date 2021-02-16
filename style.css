@@ -323,6 +323,38 @@ input[type="button"]:hover {
   transition: 0.3s ease-in;
 }
 
+#viewer-favourites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  line-height: 1.5em;
+}
+
+#user-comments {
+  display: grid;
+  grid-template-columns: 100px 100px 1fr;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  column-gap: 15px;
+  row-gap: 40px;
+  max-width: 700px;
+  margin: 20px;
+}
+
+.comment-name {
+  font-style: italic;
+}
+
+.comment-destination {
+  font-weight: bold;
+}
+
+.comment-why {
+  max-width: 450px;
+  overflow: hidden;
+}
+
 header #icon {
   color: white;
   font-size: 30px;
@@ -633,14 +665,18 @@ footer ul {
     display: block;
   }
 
-fieldset {
-  width: 300px;
+  fieldset {
+    width: 300px;
+  }
+
 }
 
 /* Responsive */
 @media screen and (max-width: 600px) {
+
   .map__iframe {
     width: 400px;
     height: 250px;
   }
+
 }

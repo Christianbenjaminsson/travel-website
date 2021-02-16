@@ -1,0 +1,19 @@
+{
+    "posts": [
+        {
+            "name": "Helene",
+            "destination": "Florida",
+            "comment": "Mitt favoritresmål! Är här ett par månader varje vinter och det är det bästa som finns!"
+        },
+        {
+            "name": "Elvira",
+            "destination": "Grekland",
+            "comment": "Jag vill till Grekland nu!"
+        },
+        {
+            "name": "Användare",
+            "destination": "Hit och dit",
+            "comment": "Därför att"
+        }
+    ]
+}

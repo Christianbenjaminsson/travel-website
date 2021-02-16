@@ -107,6 +107,14 @@
           </p>
         </div>
       </div>
+      <div id="viewer-favourites">
+        <h3>
+          <span class="sv">Tips från läsarna</span>
+          <span class="en">Viewers' favourite destinations</span>
+        </h3>
+        <div id="user-comments">
+        </div>
+      </div>
       <div id="main-input">
         <h3>
           <span class="sv">Lämna förslag på resmål <a class="destination-input">här</a>:</span>
@@ -128,13 +136,10 @@
             <span class="en">Your destination:</span>
           </label>
           <input type="text" id="suggestion" name="suggestion">
-          <div id="comment">
-            <textarea class="sv" placeholder="Varför är ditt resmål så bra?"></textarea>
-            <textarea class="en" placeholder="Why should we visit your destination?"></textarea>
-          </div>
+          <textarea id="comment" placeholder="Varför är ditt resmål så bra?"></textarea> 
           <div id="buttons">
-            <input class="sv" type="button" value="Skicka">
-            <input class="en" type="button" value="Submit">
+            <input class="sv suggestion-button" type="button" value="Skicka">
+            <input class="en suggestion-button" type="button" value="Submit">
           </div>
         </form>
       </div>
