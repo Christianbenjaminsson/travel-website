@@ -29,6 +29,14 @@ $(document).ready(() => {
         window.open('../rules.html', 'popup', 'height=500,width=400,toolbar=no');
     });
 
+    $('#location__stockholm').click(function(){
+        window.location = '../destinations/Stockholm.html';
+    });
+
+    $('#location__newyork').click(function(){
+        window.location = '../destinations/new-york.html';
+    });
+
     const posts = [
         {
             name: "Helene",
@@ -83,6 +91,61 @@ $(document).ready(() => {
         $(this).closest('form').find("input[type=text], textarea").val("");
         $('.main-form').hide();
     })
+
+    // Localstorage for destinationpages
+    const destinationPosts = [
+        {
+            destinationName: "Per",
+            destinationSubject: "Store",
+            destinationComment: "You need to visit Nordiska Kompaniet"
+        },
+        {
+            destinationName: "Matt",
+            destinationSubject: "Restaurant",
+            destinationComment: "Visit Un Poco, they have the best food ever"
+        },
+        {
+            destinationName: "Susan",
+            destinationSubject: "Things to do",
+            destinationComment: "Plan a visit to Gröna Lund. It is a really greate amusement park"
+        },
+    ];
+    
+    if (!localStorage.getItem('destinationPosts')) {
+        localStorage.setItem('destinationPosts', JSON.stringify(destinationPosts));
+    }
+    
+    const destinationPostsToShow = JSON.parse(localStorage.getItem('destinationPosts'));
+    
+    for (let i = 0; i < destinationPostsToShow.length; i++) {
+        $('#destination__user-comments').append('<span class="destination__comment-name">'+destinationPostsToShow[i].destinationName+'</span>');
+        $('#destination__user-comments').append('<span class="destination__comment-subject">'+destinationPostsToShow[i].destinationSubject+'</span>');
+        $('#destination__user-comments').append('<span class="destination__comment-why">'+destinationPostsToShow[i].destinationComment+'</span>');
+    }
+    
+    $('.destination__suggestion-button').on('click', function() {
+        let destinationCurrentPosts = JSON.parse(localStorage.getItem('destinationPosts'));
+    
+        const destinationUserName = $('#destination__input-name').val();
+        const destinationUserSubject = $('#destination__input-subjects').val();
+        const destinationUserComment = $('#destination__comment').val();
+        
+        $('#destination__user-comments').append('<span class="destination__comment-name">'+newDestinationName+'</span>');
+        $('#destination__user-comments').append('<span class="destination__comment-subject">'+newDestinationSubject+'</span>');
+        $('#destination__user-comments').append('<span class="destination__comment-why">'+newDestinationComment+'</span>');
+    
+        const destinationNewPost = {
+            destinationName: newDestinationName,
+            destinationSubject: newDestinationSubject,
+            destinationComment: newDestinationComment
+        };
+    
+        destinationCurrentPosts.push(destinationNewPost);
+        localStorage.setItem('posts', JSON.stringify(destinationCurrentPosts));
+    
+        $(this).closest('form').find("input[type=text], textarea").val("");
+        $('.main-form').hide();
+    })
 })
 
 const setLanguage = language => {
@@ -105,4 +168,3 @@ const setLanguage = language => {
         localStorage.setItem('lang', 'sv');
     }
 };
-
