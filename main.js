@@ -69,6 +69,10 @@ $(document).ready(() => {
         $('ul').toggleClass('show');
     });
 
+    $('#rules').on('click', () => {
+        window.open('./rules.html', 'popup', 'height=500,width=400,toolbar=no' )
+    });
+
     $('#destination__rules').click(function() {
         window.open('../rules.html', 'popup', 'height=500,width=400,toolbar=no');
     });
@@ -117,27 +121,32 @@ $(document).ready(() => {
     }
 
     $('.suggestion-button').on('click', function() {
-        let currentPosts = JSON.parse(localStorage.getItem('posts'));
 
-        const newName = $('#name').val();
-        const newDestination = $('#suggestion').val();
-        const newComment = $('#comment').val();
+        if (validateMainForm()) {
+            let currentPosts = JSON.parse(localStorage.getItem('posts'));
+
+            const newName = $('#name').val();
+            const newDestination = $('#suggestion').val();
+            const newComment = $('#comment').val();
         
-        $('#user-comments').append('<span class="comment-name">'+newName+'</span>');
-        $('#user-comments').append('<span class="comment-destination">'+newDestination+'</span>');
-        $('#user-comments').append('<span class="comment-why">'+newComment+'</span>');
+            $('#user-comments').append('<span class="comment-name">'+newName+'</span>');
+            $('#user-comments').append('<span class="comment-destination">'+newDestination+'</span>');
+            $('#user-comments').append('<span class="comment-why">'+newComment+'</span>');
 
-        const newPost = {
-            name: newName,
-            destination: newDestination,
-            comment: newComment
-        };
+            const newPost = {
+                name: newName,
+                destination: newDestination,
+                comment: newComment
+            };
 
-        currentPosts.push(newPost);
-        localStorage.setItem('posts', JSON.stringify(currentPosts));
+            currentPosts.push(newPost);
+            localStorage.setItem('posts', JSON.stringify(currentPosts));
 
-        $(this).closest('form').find("input[type=text], textarea").val("");
-        $('.main-form').hide();
+            $(this).closest('form').find("input[type=text], textarea").val("");
+            $('.main-form').hide();
+        } else {
+            alert('validering misslyckades');
+        }
     })
 
     // Localstorage for destinationpages
@@ -229,5 +238,28 @@ const showPosts = posts => {
         $('#user-comments').append('<span class="comment-why">'+post.comment+'</span>');
     });
 };
+
+const validateMainForm = () => {
+
+    const newName = $('#name').val();
+    const newEmail = $('#email').val();
+    const newDestination = $('#suggestion').val();
+    const newComment = $('#comment').val();
+
+    if (!isValidName(newName)) {
+        $('#name').val('Fyll i det här fältet');
+        return false;
+    } 
+    if (!isValidEmail(newEmail)) {
+        $('#email').val('Ogiltig email');
+        return false;
+    }
+    alert('Validering okej');
+    return true;
+}
+
+const emptyMainForm = () => $('.main-form').find("input[type=text], textarea").val("");
+
+const isValidName = name => name.length >= 1;
 
 
