@@ -8,6 +8,11 @@ $(document).ready(() => {
 
     setLanguage(localStorage.getItem('lang'));
 
+
+    if(localStorage.getItem('destinations')) {
+        showDestinations(JSON.parse(localStorage.getItem('destinations')));
+    }
+
     $('#lang-switch').change(function() {
         const lang = $(this).val();
         setLanguage(lang);
@@ -32,22 +37,15 @@ $(document).ready(() => {
                 let lines = event.target.result;
                 const newDestinations = JSON.parse(lines);
 
-                newDestinations.destinations.forEach(destination => {
-
-                    const newImage = destination.image;
-                    const newLink = destination.link;
-                    const newNameSv = destination.name_sv;
-                    const newNameEn = destination.name_en;
-                    const newDescriptionSv = destination.description_sv;
-                    const newDescriptionEn = destination.description_en;
-
-                    const newDiv = document.createElement("div");
-                    newDiv.className = "destination";
-                    newDiv.innerHTML = '<img src='+newImage+'><h4><span class="sv"><a href='+newLink+'>'+newNameSv+'</a></span><span class="en"><a href='+newLink+'>'+newNameEn+'</a></span></h4><p class="description"><span class="sv">'+newDescriptionSv+'</span><span class="en">'+newDescriptionEn+'</span></p>';
-                    document.getElementById('container').append(newDiv);
-                    setLanguage(localStorage.getItem('lang'));
-                });
+                showDestinations(newDestinations.destinations);
+                let destinationsToStore = [];
+                if (localStorage.getItem('destinations')) {
+                    destinations.toStore = localStorage.getItem('destinations');
+                }
+                newDestinations.destinations.forEach(destination => destinationsToStore.push(destination));
+                localStorage.setItem('destinations', JSON.stringify(destinationsToStore));
             };
+
             reader.readAsText(file);
             $('#admin').slideUp(300);
         }
@@ -239,6 +237,24 @@ const setLanguage = language => {
         localStorage.setItem('lang', 'sv');
     }
 };
+
+const showDestinations = destinations => {
+    destinations.forEach(destination => {
+
+        const newImage = destination.image;
+        const newLink = destination.link;
+        const newNameSv = destination.name_sv;
+        const newNameEn = destination.name_en;
+        const newDescriptionSv = destination.description_sv;
+        const newDescriptionEn = destination.description_en;
+
+        const newDiv = document.createElement("div");
+        newDiv.className = "destination";
+        newDiv.innerHTML = '<a href='+newLink+'><img src='+newImage+' alt='+newNameSv+'></a><h4><span class="sv"><a href='+newLink+'>'+newNameSv+'</a></span><span class="en"><a href='+newLink+'>'+newNameEn+'</a></span></h4><p class="description"><span class="sv">'+newDescriptionSv+'</span><span class="en">'+newDescriptionEn+'</span></p>';
+        document.getElementById('container').append(newDiv);
+        setLanguage(localStorage.getItem('lang'));
+    });
+}
 
 const showPosts = posts => {
     $('#user-comments').empty();

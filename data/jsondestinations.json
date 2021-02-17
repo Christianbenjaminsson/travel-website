@@ -15,6 +15,22 @@
             "name_en": "Stockholm",
             "description_sv": "Sveriges huvudstad",
             "description_en": "The capital of Sweden" 
+        },
+        {
+            "image": "images/rovaniemi.jpg",
+            "link": "destinations/blank.html",
+            "name_sv": "Rovaniemi",
+            "name_en": "Rovaniemi",
+            "description_sv": "Tomtens högkvarter",
+            "description_en": "Santa's secret place" 
+        },
+        {
+            "image": "images/bali.jpg",
+            "link": "destinations/blank.html",
+            "name_sv": "Bali",
+            "name_en": "Bali",
+            "description_sv": "Semesterparadis",
+            "description_en": "A tropical paradise" 
         }
     ] 
 }
