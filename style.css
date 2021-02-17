@@ -61,7 +61,8 @@ h3 {
   color: #ffb570;
 }
 
-header, #admin {
+header,
+#admin {
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -578,7 +579,7 @@ footer ul {
 
   .destination__form {
     grid-template-columns: 1fr repeat(2, 2fr);
-    grid-template-rows: repeat(6, 1fr) 5fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr) 5fr 1fr 1fr;
     align-items: center;
     width: 600px;
     height: 350px;
