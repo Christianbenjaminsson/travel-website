@@ -185,6 +185,10 @@ $(document).ready(() => {
     }
     
     $('.destination__suggestion-button').on('click', function() {
+
+        $('.error').hide();
+
+        if (validateDestinationForm()) {        
         let destinationCurrentPosts = JSON.parse(localStorage.getItem('destinationPosts'));
     
         const newDestinationName = $('#destination__input-name').val();
@@ -204,8 +208,10 @@ $(document).ready(() => {
         destinationCurrentPosts.push(destinationNewPost);
         localStorage.setItem('destinationPosts', JSON.stringify(destinationCurrentPosts));
     
-        $(this).closest('form').find("input[type=text], textarea").val("");
+        $(this).closest('form').find("input[type=text], textarea, input[type=email]").val("");
         $(this).closest('form').find("#destination__input-subjects").val("");
+        $(this).closest('form').find("input[type=checkbox]").prop('checked', false);
+        }  
     })
 })
 
