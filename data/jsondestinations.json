@@ -1,0 +1,20 @@
+{
+    "destinations": [
+        {
+            "image": "images/newyork.jpg",
+            "link": "destinations/new-york.html",
+            "name_sv": "New York",
+            "name_en": "New York City",
+            "description_sv": "Storstädernas storstad",
+            "description_en": "The greatest metropolis"
+        },
+        {
+            "image": "images/stockholm.jpg",
+            "link": "destinations/Stockholm.html",
+            "name_sv": "Stockholm",
+            "name_en": "Stockholm",
+            "description_sv": "Sveriges huvudstad",
+            "description_en": "The capital of Sweden" 
+        }
+    ] 
+}

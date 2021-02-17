@@ -10,6 +10,55 @@ $(document).ready(() => {
         setLanguage(lang);
     });
 
+    $('#admin').hide();
+    $('#admin-link').on('click', () => {
+        $('#admin').slideToggle(300);
+    });
+
+    $('.load-file').on('click', () => {
+        input = document.getElementById('file-input');
+
+        if(!input) {
+            alert('Filen kan inte hittas.');
+        } else if (!input.files[0]){
+            alert('Du måste välja en fil att ladda upp');
+        } else {
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.onload = event => {
+                let lines = event.target.result;
+                const newDestinations = JSON.parse(lines);
+
+                newDestinations.destinations.forEach(destination => {
+
+                    const newImage = destination.image;
+                    const newLink = destination.link;
+                    const newNameSv = destination.name_sv;
+                    const newNameEn = destination.name_en;
+                    const newDescriptionSv = destination.description_sv;
+                    const newDescriptionEn = destination.description_en;
+
+                    const newDiv = document.createElement("div");
+                    newDiv.className = "destination";
+                    newDiv.innerHTML = '<img src='+newImage+'><h4><span class="sv"><a href='+newLink+'>'+newNameSv+'</a></span><span class="en"><a href='+newLink+'>'+newNameEn+'</a></span></h4><p class="description"><span class="sv">'+newDescriptionSv+'</span><span class="en">'+newDescriptionEn+'</span></p>';
+                    document.getElementById('container').append(newDiv);
+                    setLanguage(localStorage.getItem('lang'));
+                });
+            };
+            reader.readAsText(file);
+            $('#admin').slideUp(300);
+        }
+    });
+
+    $('#clear-button').on('click', () => {
+        localStorage.removeItem('posts');
+        localStorage.removeItem('destinationPosts');
+        localStorage.setItem('posts', JSON.stringify(posts));
+        localStorage.setItem('destinationposts', JSON.stringify(destinationPosts));
+        showPosts(posts);
+        $('#admin').slideUp(300);
+    });
+
     $('.main-form').hide();
     $('.destination-input').on('click', () => {
         $('.main-form').toggle();
@@ -29,11 +78,11 @@ $(document).ready(() => {
     });
 
     $('#location__stockholm').click(function(){
-        window.location = '../destinations/stockholm.html';
+        window.location = './destinations/stockholm.html';
     });
 
     $('#location__newyork').click(function(){
-        window.location = '../destinations/new-york.html';
+        window.location = './destinations/new-york.html';
     });
 
     const posts = [
@@ -153,6 +202,7 @@ const setLanguage = language => {
         $('.sv').hide();
         $('.en').show();
         $('#lang-switch').val('en');
+        $('#clear-button').val('Clear posts');
         $('#comment').attr('placeholder', 'Why should we visit your destination?');
         $('#destination__comment').attr('placeholder', 'Enter your tip');
         $('#destination__input-subjects').removeAttr('list');
@@ -162,6 +212,7 @@ const setLanguage = language => {
         $('.en').hide();
         $('.sv').show();
         $('#lang-switch').val('sv');
+        $('#clear-button').val('Rensa inlägg');
         $('#comment').attr('placeholder', 'Varför är ditt resmål så bra?');
         $('#destination__comment').attr('placeholder', 'Här lämnar du ditt tips');
         $('#destination__input-subjects').removeAttr('list');
@@ -169,3 +220,14 @@ const setLanguage = language => {
         localStorage.setItem('lang', 'sv');
     }
 };
+
+const showPosts = posts => {
+    $('#user-comments').empty();
+    posts.forEach(post => {
+        $('#user-comments').append('<span class="comment-name">'+post.name+'</span>');
+        $('#user-comments').append('<span class="comment-destination">'+post.destination+'</span>');
+        $('#user-comments').append('<span class="comment-why">'+post.comment+'</span>');
+    });
+};
+
+

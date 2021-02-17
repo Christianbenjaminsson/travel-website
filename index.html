@@ -25,6 +25,12 @@
             <span class="en">about us</span>
           </a>
         </li>
+        <li>
+          <a id="admin-link" href="#">
+            <span class="sv">admin</span>
+            <span class="en">admin</span>
+          </a>
+        </li>
       </ul>
       <select id="lang-switch">
         <option value="sv" selected>Svenska</option>
@@ -33,6 +39,18 @@
     </div>
     <div class="side"></div>
   </header>  
+  <div id="admin">
+    <form id="json-upload">
+      <p>
+        <span class="sv">Välj JSON-fil att ladda upp</span>
+        <span class="en">Please choose the JSON-file to load</span>
+      </p>
+      <input type="file" id="file-input">
+      <input type="button" class="load-file sv" value="Ladda upp">
+      <input type="button" class="load-file en" value="Load file">
+    </form>
+    <input id="clear-button" type="button">
+  </div>
   <main>
     <div class="side"></div>
     <div class="center">
@@ -57,7 +75,7 @@
           </span>
         </p>
       </div>
-      <div class="container">
+      <div id="container">
         <div class="destination" id="location__newyork">
           <img src="images/newyork.jpg">
           <h4>

@@ -61,7 +61,7 @@ h3 {
   color: #ffb570;
 }
 
-header {
+header, #admin {
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -131,6 +131,21 @@ header select {
   font-family: "Kumbh Sans", sans-serif;
 }
 
+#admin {
+  top: 100px;
+  justify-content: space-around;
+  opacity: 0.9;
+}
+
+#json-upload {
+  opacity: 1;
+}
+
+#clear-button {
+  width: 150px;
+  margin-top: 25px;
+}
+
 main,
 footer {
   position: relative;
@@ -186,7 +201,7 @@ main .info::before {
   opacity: 0.2;
 }
 
-main .container {
+#container {
   max-width: 1200px;
   padding: 30px 15px;
   display: flex;
