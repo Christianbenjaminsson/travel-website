@@ -144,7 +144,7 @@ main {
 }
 
 .side {
-  background-color: #e09249;
+  background-color: #ffffff;
   flex-basis: 0px;
   flex-grow: 2;
 }
@@ -230,7 +230,6 @@ main a {
 }
 
 main a:hover {
-  color: #e09249;
   text-decoration: underline;
 }
 
@@ -320,6 +319,20 @@ input[type="button"]:hover {
   transition: 0.3s ease-in;
 }
 
+input[type="submit"] {
+  background-color: #ffb570;
+  border-radius: 5px;
+  font-size: 1em;
+  margin: 10px 0;
+  width: 100px;
+}
+
+input[type="submit"]:hover {
+  border-radius: 5px;
+  transform: scale(1.1);
+  transition: 0.3s ease-in;
+}
+
 #viewer-favourites {
   display: flex;
   flex-direction: column;
@@ -368,14 +381,14 @@ header #icon {
   flex-wrap: wrap;
   max-width: 1280px;
   margin: auto;
+  justify-content: space-between;
 }
 
 .destination__info {
   position: relative;
-  top: 110px;
   padding: 10px 10px 10px;
   margin-left: 30px;
-  max-width: 700px;
+  max-width: 680px;
   float: left;
 }
 
@@ -386,8 +399,8 @@ header #icon {
 
 .mapouter {
   float: left;
-  margin-left: 90px;
-  margin-top: 180px;
+  margin-top: 75px;
+  margin-right: 30px;
   margin-bottom: 70px;
   position: relative;
 }
@@ -511,11 +524,10 @@ footer ul {
 
 .about__section {
   position: relative;
-  top: 110px;
   padding: 10px 10px 10px;
   margin-left: 30px;
   max-width: 700px;
-  float: left;
+  height: 1000px;
 }
 
 /* Responsive */
@@ -534,6 +546,7 @@ footer ul {
   .mapouter {
     float: none;
     margin-left: 0px;
+    margin-right: 0px;
   }
 
   .destination__about-section {
@@ -544,6 +557,10 @@ footer ul {
     width: 600px;
   }
 
+  .destination__form-section {
+    align-items: center;
+  }
+
   .destination__form {
     grid-template-columns: 1fr repeat(2, 2fr);
     grid-template-rows: repeat(6, 1fr) 5fr 1fr 1fr;
@@ -551,6 +568,11 @@ footer ul {
     width: 600px;
     height: 350px;
     margin: 20px 5px;
+  }
+
+  #destination__viewer-favourites {
+    max-width: 600px;
+    margin-left: 30px;
   }
 
   #destination__buttons {
@@ -565,14 +587,9 @@ footer ul {
     display: block;
   }
 
-  header a {
-    font-size: 20px;
-  }
-
   a.active,
   a:hover {
     border: none;
-    color: sandybrown;
   }
 
   header ul.show {
@@ -668,7 +685,11 @@ footer ul {
 }
 
 /* Responsive */
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 650px) {
+  .links a {
+    font-size: 1rem;
+  }
+
   .map__iframe {
     width: 400px;
     height: 250px;
