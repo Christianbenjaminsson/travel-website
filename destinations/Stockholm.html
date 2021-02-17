@@ -9,163 +9,170 @@
   </head>
   <body>
     <header>
-      <a href="../index.html" id="header__logo">TRAVEL</a>
-      <ul class="links">
-        <li>
-          <a href="../index.html">
-            <span class="sv">hem</span>
-            <span class="en">home</span>
-          </a>
-        </li>
-        <li>
-          <a href="../about-us.html">
-            <span class="sv">om oss</span>
-            <span class="en">about us</span>
-          </a>
-        </li>
-      </ul>
-      <select id="lang-switch">
-        <option value="sv" selected>Svenska</option>
-        <option value="en">English</option>
-      </select>
-    </header> 
-    <div class="destination__container">
-      <div class="destination__info">
-        <h2>Stockholm</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mollis 
-          eros sed felis interdum, quis consectetur magna aliquam. Cras aliquam urna 
-          vel sapien ullamcorper, sed suscipit eros laoreet. Sed eleifend lacus in 
-          diam placerat, in eleifend enim aliquet. Nam dui mi, pulvinar vitae elit 
-          porta, tristique malesuada velit. Sed rutrum, felis ut feugiat euismod, 
-          sem neque dignissim neque, sit amet condimentum leo augue et velit. Ut 
-          aliquet ligula odio, eu tincidunt elit tempus vehicula. Ut a est consectetur, 
-          iaculis felis quis, ultrices enim. Donec ultrices placerat felis eu gravida. 
-          Curabitur dictum at sapien sit amet venenatis. Ut pharetra urna quis orci 
-          ullamcorper, a vestibulum nisi faucibus. Aliquam lacus augue, semper in massa 
-          ut, tincidunt dignissim metus. Mauris eget vehicula elit. Nam at efficitur 
-          augue. Donec aliquet magna quis dolor commodo lobortis.
-          Pellentesque tortor elit, mollis eget tincidunt sed, scelerisque et quam. 
-          Praesent fringilla velit eu tempor tincidunt. In posuere blandit quam. Sed 
-          imperdiet, nisi bibendum auctor dignissim, nunc erat cursus diam, sed dapibus 
-          metus purus sed nisi. Aenean feugiat est id sapien consequat, at efficitur 
-          nibh iaculis. Phasellus ultrices augue ipsum, a convallis arcu tristique ut. 
-          Sed quis gravida sem. Fusce semper lacinia mollis.
-        </p>
-      </div>
-      <div class="mapouter">
-        <div class="gmap_canvas">
-          <iframe class="map__iframe" id="gmap_canvas"
-            src="https://maps.google.com/maps?q=Stokholm&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-          </iframe>
+      <div class="side"></div>
+        <div class="center">
+          <a href="../index.html" id="header__logo">TRAVEL</a>
+          <ul class="links">
+            <li>
+              <a href="../index.html">
+                <span class="sv">hem</span>
+                <span class="en">home</span>
+              </a>
+            </li>
+            <li>
+              <a href="../about-us.html">
+                <span class="sv">om oss</span>
+                <span class="en">about us</span>
+              </a>
+            </li>
+          </ul>
+          <select id="lang-switch">
+            <option value="sv" selected>Svenska</option>
+            <option value="en">English</option>
+          </select>
         </div>
-      </div>
-      <div class="destination__about-section">
-        <div class="destination__about-info">
-          <fieldset>
-            <legend>Information</legend>
-              <table class="table__large">
-                <tr>
-                  <td class="sv">Folkmängd:</td>
-                  <td class="en">Population:</td>
-                  <td>1 000 000</td>
-                  <td class="sv">Språk:</td>
-                  <td class="en">Language:</td>
-                  <td class="sv">Svenska</td>
-                  <td class="en">Swedish</td>
-                </tr>
-                <tr>
-                  <td class="sv">Valuta:</td>
-                  <td class="en">Currency:</td>
-                  <td>SEK</td>
-                </tr>
-              </table>
-              <table class="table__small">
-                <tr>
-                  <td class="sv">Folkmängd:</td>
-                  <td class="en">Population:</td>
-                  <td>1 000 000</td>
-                </tr>
-                <tr>
-                  <td class="sv">Språk:</td>
-                  <td class="en">Language:</td>
-                  <td class="sv">Svenska</td>
-                  <td class="en">Swedish</td>
-                </tr>
-                <tr>
-                  <td class="sv">Valuta:</td>
-                  <td class="en">Currency:</td>
-                  <td>SEK</td>
-                </tr>
-              </table>
-          </fieldset>
-        </div>
-      </div>
-    <div class="destination__form-section">
-      <h3>
-        <span class="sv">Lämna dina tips om resmålet</span>
-        <span class="en">Enter your travel destination tips</span>
-      </h3>
-      <form action="" class="destination__form" method="get">
-        <label id="destination__name-label" for="name">
-          <span class="sv">Namn:</span>
-          <span class="en">Name:</span>
-        </label>
-        <input type="text" id="destination__input-name" name="name">
-        <label id="destination__email-label" for="email">
-          <span class="sv">E-post:</span>
-          <span class="en">E-mail:</span>
-        </label>
-        <input type="text" id="destination__input-email" email="email">
-        <label id="destination__subject-label" for="destination__subjects">
-          <span class="sv" for="subject">Välj ämne:</span>
-          <span class="en" for="subject">Choose subject:</span>
-        </label>
-        <input list="destination__subjects-sv" name="subjects" id="destination__input-subjects">
-        <datalist id="destination__subjects-sv">
-          <option value="Restaurang">
-          <option value="Sevärdhet">
-          <option value="Café">
-          <option value="Affär">
-          <option value="Att göra">
-          <option value="Övrigt">
-        </datalist>
-        <datalist id="destination__subjects-en">
-          <option value="Restaurant">
-          <option value="Attraction">
-          <option value="Café">
-          <option value="Shop">
-          <option value="Things to do">
-          <option value="Other">
-        </datalist>
-            <div id="destination__comment">
-              <textarea class="sv" placeholder="Här lämnar du ditt tips"></textarea>
-              <textarea class="en" placeholder="Enter your tip"></textarea>
+      <div class="side"></div>
+    </header>
+    <main>
+      <div class="side"></div>
+        <div class="center">
+          <div class="destination__container">
+            <div class="destination__info">
+              <h2>Stockholm</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mollis 
+                eros sed felis interdum, quis consectetur magna aliquam. Cras aliquam urna 
+                vel sapien ullamcorper, sed suscipit eros laoreet. Sed eleifend lacus in 
+                diam placerat, in eleifend enim aliquet. Nam dui mi, pulvinar vitae elit 
+                porta, tristique malesuada velit. Sed rutrum, felis ut feugiat euismod, 
+                sem neque dignissim neque, sit amet condimentum leo augue et velit. Ut 
+                aliquet ligula odio, eu tincidunt elit tempus vehicula. Ut a est consectetur, 
+                iaculis felis quis, ultrices enim. Donec ultrices placerat felis eu gravida. 
+                Curabitur dictum at sapien sit amet venenatis. Ut pharetra urna quis orci 
+                ullamcorper, a vestibulum nisi faucibus. Aliquam lacus augue, semper in massa 
+                ut, tincidunt dignissim metus. Mauris eget vehicula elit. Nam at efficitur 
+                augue. Donec aliquet magna quis dolor commodo lobortis.
+                Pellentesque tortor elit, mollis eget tincidunt sed, scelerisque et quam. 
+                Praesent fringilla velit eu tempor tincidunt. In posuere blandit quam. Sed 
+                imperdiet, nisi bibendum auctor dignissim, nunc erat cursus diam, sed dapibus 
+                metus purus sed nisi. Aenean feugiat est id sapien consequat, at efficitur 
+                nibh iaculis. Phasellus ultrices augue ipsum, a convallis arcu tristique ut. 
+                Sed quis gravida sem. Fusce semper lacinia mollis.
+              </p>
             </div>
-            <div id="destination__checkbox">
-              <input type="checkbox" name="accept" value="Accept">
-              <span class="sv" for="destination__checkbox">Jag har läst och accepterar Travels
-                <a href="#" id="destination__rules"> regler</a>
-              </span>
-              <span class="en" for="destination__checkbox">I have read and accept Travels 
-                <a href="#" id="destination__rules-en"> rules</a>
-              </span>
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe class="map__iframe" id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=Stokholm&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                </iframe>
+              </div>
             </div>
-        <div id="destination__buttons">
-          <input class="sv destination__suggestion-button" type="button" value="Skicka">
-          <input class="en destination__suggestion-button" type="button" value="Submit">
-        </div>
-      </form>
-      <div id="viewer-favourites">
-        <h3>
-          <span class="sv">Tips från läsarna</span>
-          <span class="en">Viewers' destination tips</span>
-        </h3>
-        <div id="destination__user-comments">
+            <div class="destination__about-section">
+              <div class="destination__about-info">
+                <fieldset>
+                  <legend>Information</legend>
+                  <table class="table__large">
+                    <tr>
+                      <td class="sv">Folkmängd:</td>
+                      <td class="en">Population:</td>
+                      <td>1 000 000</td>
+                      <td class="sv">Språk:</td>
+                      <td class="en">Language:</td>
+                      <td class="sv">Svenska</td>
+                      <td class="en">Swedish</td>
+                    </tr>
+                    <tr>
+                      <td class="sv">Valuta:</td>
+                      <td class="en">Currency:</td>
+                      <td>SEK</td>
+                    </tr>
+                  </table>
+                  <table class="table__small">
+                    <tr>
+                      <td class="sv">Folkmängd:</td>
+                      <td class="en">Population:</td>
+                      <td>1 000 000</td>
+                    </tr>
+                    <tr>
+                      <td class="sv">Språk:</td>
+                      <td class="en">Language:</td>
+                      <td class="sv">Svenska</td>
+                      <td class="en">Swedish</td>
+                    </tr>
+                    <tr>
+                      <td class="sv">Valuta:</td>
+                      <td class="en">Currency:</td>
+                      <td>SEK</td>
+                    </tr>
+                  </table>
+                </fieldset>
+              </div>
+            </div>
+            <div class="destination__form-section">
+              <h3>
+                <span class="sv">Lämna dina tips om resmålet</span>
+                <span class="en">Enter your travel destination tips</span>
+              </h3>
+              <form action="" class="destination__form" method="get">
+                <label id="destination__name-label" for="name">
+                  <span class="sv">Namn:</span>
+                  <span class="en">Name:</span>
+                </label>
+                <input type="text" id="destination__input-name" name="name">
+                <label id="destination__email-label" for="email">
+                  <span class="sv">E-post:</span>
+                  <span class="en">E-mail:</span>
+                </label>
+                <input type="text" id="destination__input-email" email="email">
+                <label id="destination__subject-label" for="destination__subjects">
+                  <span class="sv" for="subject">Välj ämne:</span>
+                  <span class="en" for="subject">Choose subject:</span>
+                </label>
+                <input list="destination__subjects-sv" name="subjects" id="destination__input-subjects">
+                <datalist id="destination__subjects-sv">
+                  <option value="Restaurang">
+                  <option value="Sevärdhet">
+                  <option value="Café">
+                  <option value="Affär">
+                  <option value="Att göra">
+                  <option value="Övrigt">
+                </datalist>
+                <datalist id="destination__subjects-en">
+                  <option value="Restaurant">
+                  <option value="Attraction">
+                  <option value="Café">
+                  <option value="Shop">
+                  <option value="Things to do">
+                  <option value="Other">
+                </datalist>
+                <textarea id="destination__comment" placeholder=""></textarea>
+                <div id="destination__checkbox">
+                  <input required type="checkbox" name="accept" value="Accept">
+                    <span class="sv" for="destination__checkbox">Jag har läst och accepterar Travels
+                      <a href="#" id="destination__rules"> regler</a>
+                    </span>
+                    <span class="en" for="destination__checkbox">I have read and accept Travels 
+                      <a href="#" id="destination__rules-en"> rules</a>
+                    </span>
+                </div>
+                <div id="destination__buttons">
+                  <input class="sv destination__suggestion-button" type="submit" value="Skicka">
+                  <input class="en destination__suggestion-button" type="submit" value="Submit">
+                </div>
+              </form>
+              <div id="destination__viewer-favourites">
+                <h3>
+                  <span class="sv">Tips från läsarna</span>
+                  <span class="en">Viewers' destination tips</span>
+                </h3>
+                  <div id="destination__user-comments">
+                  </div>
+              </div>
+            </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="side"></div>
+    </main>
     <footer>
       <ul>
         <li>Travel</li>
