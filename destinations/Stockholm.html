@@ -73,35 +73,53 @@
                   <legend>Information</legend>
                   <table class="table__large">
                     <tr>
-                      <td class="sv">Folkmängd:</td>
-                      <td class="en">Population:</td>
+                      <td>
+                        <span class="sv">Folkmängd:</span>
+                        <span class="en">Population:</span>
+                      </td>
                       <td>1 000 000</td>
-                      <td class="sv">Språk:</td>
-                      <td class="en">Language:</td>
-                      <td class="sv">Svenska</td>
-                      <td class="en">Swedish</td>
+                      <td>
+                        <span class="sv">Språk:</span>
+                        <span class="en">Language:</span>
+                      </td>
+                      <td>
+                        <span class="sv">Svenska</span>
+                        <span class="en">Swedish</span>
+                      </td>
                     </tr>
                     <tr>
-                      <td class="sv">Valuta:</td>
-                      <td class="en">Currency:</td>
+                      <td>
+                        <span class="sv">Valuta:</span>
+                        <span class="en">Currency:</span>
+                      </td>
                       <td>SEK</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </table>
                   <table class="table__small">
                     <tr>
-                      <td class="sv">Folkmängd:</td>
-                      <td class="en">Population:</td>
+                      <td>
+                        <span class="sv">Folkmängd:</span>
+                        <span class="en">Population:</span>
+                      </td>
                       <td>1 000 000</td>
                     </tr>
                     <tr>
-                      <td class="sv">Språk:</td>
-                      <td class="en">Language:</td>
-                      <td class="sv">Svenska</td>
-                      <td class="en">Swedish</td>
+                      <td>
+                        <span class="sv">Språk:</span>
+                        <span class="en">Language:</span>
+                      </td>
+                      <td>
+                        <span class="sv">Svenska</span>
+                        <span class="en">Swedish</span>
+                      </td>
                     </tr>
                     <tr>
-                      <td class="sv">Valuta:</td>
-                      <td class="en">Currency:</td>
+                      <td>
+                        <span class="sv">Valuta:</span>
+                        <span class="en">Currency:</span>
+                      </td>
                       <td>SEK</td>
                     </tr>
                   </table>
@@ -113,20 +131,20 @@
                 <span class="sv">Lämna dina tips om resmålet</span>
                 <span class="en">Enter your travel destination tips</span>
               </h3>
-              <form action="" class="destination__form" method="get">
-                <label id="destination__name-label" for="name">
+              <form action="#" class="destination__form" method="get">
+                <label id="destination__name-label" for="destination__input-name">
                   <span class="sv">Namn:</span>
                   <span class="en">Name:</span>
                 </label>
                 <input type="text" id="destination__input-name" name="name">
-                <label id="destination__email-label" for="email">
+                <label id="destination__email-label" for="destination__input-email">
                   <span class="sv">E-post:</span>
                   <span class="en">E-mail:</span>
                 </label>
-                <input type="text" id="destination__input-email" email="email">
-                <label id="destination__subject-label" for="destination__subjects">
-                  <span class="sv" for="subject">Välj ämne:</span>
-                  <span class="en" for="subject">Choose subject:</span>
+                <input type="email" id="destination__input-email" name="email">
+                <label id="destination__subject-label" for="destination__input-subjects">
+                  <span class="sv">Välj ämne:</span>
+                  <span class="en">Choose subject:</span>
                 </label>
                 <input list="destination__subjects-sv" name="subjects" id="destination__input-subjects">
                 <datalist id="destination__subjects-sv">
@@ -147,13 +165,15 @@
                 </datalist>
                 <textarea id="destination__comment" placeholder=""></textarea>
                 <div id="destination__checkbox">
-                  <input required type="checkbox" name="accept" value="Accept">
-                    <span class="sv" for="destination__checkbox">Jag har läst och accepterar Travels
-                      <a href="#" id="destination__rules"> regler</a>
-                    </span>
-                    <span class="en" for="destination__checkbox">I have read and accept Travels 
-                      <a href="#" id="destination__rules-en"> rules</a>
-                    </span>
+                  <input required type="checkbox" id="accept" name="accept" value="Accept">
+                    <label for="accept">
+                      <span class="sv">Jag har läst och accepterar Travels
+                        <a href="#" id="destination__rules"> regler</a>
+                      </span>
+                      <span class="en">I have read and accept Travels 
+                        <a href="#" id="destination__rules-en"> rules</a>
+                      </span>
+                    </label>
                 </div>
                 <div id="destination__buttons">
                   <input class="sv destination__suggestion-button" type="submit" value="Skicka">
