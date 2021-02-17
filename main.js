@@ -1,5 +1,4 @@
 $(document).ready(() => {
-
     if (!localStorage.getItem('lang')) {
         localStorage.setItem('lang', 'sv');
     }
@@ -30,7 +29,7 @@ $(document).ready(() => {
     });
 
     $('#location__stockholm').click(function(){
-        window.location = '../destinations/Stockholm.html';
+        window.location = '../destinations/stockholm.html';
     });
 
     $('#location__newyork').click(function(){
@@ -118,21 +117,21 @@ $(document).ready(() => {
     const destinationPostsToShow = JSON.parse(localStorage.getItem('destinationPosts'));
     
     for (let i = 0; i < destinationPostsToShow.length; i++) {
-        $('#destination__user-comments').append('<span class="destination__comment-name">'+destinationPostsToShow[i].destinationName+'</span>');
-        $('#destination__user-comments').append('<span class="destination__comment-subject">'+destinationPostsToShow[i].destinationSubject+'</span>');
-        $('#destination__user-comments').append('<span class="destination__comment-why">'+destinationPostsToShow[i].destinationComment+'</span>');
+        $('#destination__user-comments').append('<span class="destinations__comment-name">'+destinationPostsToShow[i].destinationName+'</span>');
+        $('#destination__user-comments').append('<span class="destinations__comment-subject">'+destinationPostsToShow[i].destinationSubject+'</span>');
+        $('#destination__user-comments').append('<span class="destinations__comment-why">'+destinationPostsToShow[i].destinationComment+'</span>');
     }
     
     $('.destination__suggestion-button').on('click', function() {
         let destinationCurrentPosts = JSON.parse(localStorage.getItem('destinationPosts'));
     
-        const destinationUserName = $('#destination__input-name').val();
-        const destinationUserSubject = $('#destination__input-subjects').val();
-        const destinationUserComment = $('#destination__comment').val();
+        const newDestinationName = $('#destination__input-name').val();
+        const newDestinationSubject = $('#destination__input-subjects').val();
+        const newDestinationComment = $('#destination__comment').val();
         
-        $('#destination__user-comments').append('<span class="destination__comment-name">'+newDestinationName+'</span>');
-        $('#destination__user-comments').append('<span class="destination__comment-subject">'+newDestinationSubject+'</span>');
-        $('#destination__user-comments').append('<span class="destination__comment-why">'+newDestinationComment+'</span>');
+        $('#destination__user-comments').append('<span class="destinations__comment-name">'+newDestinationName+'</span>');
+        $('#destination__user-comments').append('<span class="destinations__comment-subject">'+newDestinationSubject+'</span>');
+        $('#destination__user-comments').append('<span class="destinations__comment-why">'+newDestinationComment+'</span>');
     
         const destinationNewPost = {
             destinationName: newDestinationName,
@@ -141,10 +140,10 @@ $(document).ready(() => {
         };
     
         destinationCurrentPosts.push(destinationNewPost);
-        localStorage.setItem('posts', JSON.stringify(destinationCurrentPosts));
+        localStorage.setItem('destinationPosts', JSON.stringify(destinationCurrentPosts));
     
         $(this).closest('form').find("input[type=text], textarea").val("");
-        $('.main-form').hide();
+        $(this).closest('form').find("#destination__input-subjects").val("");
     })
 })
 
@@ -155,6 +154,7 @@ const setLanguage = language => {
         $('.en').show();
         $('#lang-switch').val('en');
         $('#comment').attr('placeholder', 'Why should we visit your destination?');
+        $('#destination__comment').attr('placeholder', 'Enter your tip');
         $('#destination__input-subjects').removeAttr('list');
         $('#destination__input-subjects').attr('list', 'destination__subjects-en');
         localStorage.setItem('lang', 'en');
@@ -163,6 +163,7 @@ const setLanguage = language => {
         $('.sv').show();
         $('#lang-switch').val('sv');
         $('#comment').attr('placeholder', 'Varför är ditt resmål så bra?');
+        $('#destination__comment').attr('placeholder', 'Här lämnar du ditt tips');
         $('#destination__input-subjects').removeAttr('list');
         $('#destination__input-subjects').attr('list', 'destination__subjects-sv');
         localStorage.setItem('lang', 'sv');
