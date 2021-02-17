@@ -292,4 +292,52 @@ const isValidDestination = destination => destination.length >= 1;
 
 const isValidComment = comment => comment.length >= 1;
 
+//Validate destionation form
+const validateDestinationForm = () => {
 
+    const destinationNewName = $('#destination__input-name').val();
+    const destinationNewEmail = $('#destination__input-email').val();
+    const destinationNewSubject = $('#destination__input-subjects').val();
+    const destinationNewComment = $('#destination__comment').val();
+
+    let destinationValid = true;
+
+    if (!isValidName(destinationNewName)) {
+        $('#destination__name-error').show();
+        destinationValid = false;
+    }
+    if (!isValidEmail(destinationNewEmail)) {
+        $('#destination__email-error').show();
+        destinationValid = false;
+    }
+    if (!isValidDestination(destinationNewSubject)) {
+        $('#destination__subjects-error').show();
+        destinationValid = false;
+    }
+    if (!isValidComment(destinationNewComment)) {
+        $('#destination__comment-error').show();
+        destinationValid = false;
+    }
+    if (!$('#destination__accept').is(':checked')) {
+        $('#destination__accept-error').show();
+        destinationValid = false;
+    }
+
+    if (!destinationValid) {
+        const currentLanguage = localStorage.getItem('lang');
+        if (currentLanguage === 'en') {
+            $('.sv').hide();
+        } else {
+            $('.en').hide();
+        }
+    }
+    return destinationValid;
+}
+
+const destinationIsValidName = destinationName => destinationName.length >= 1;
+
+const destinationIsValidEmail = destinationEmail => destinationEmail.length >= 1;
+
+const destinationIsValidDestination = destinationSubjects => destinationSubjects.length >= 1;
+
+const destinationIsValidComment = destinationComment => destinationComment.length >= 1;

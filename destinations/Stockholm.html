@@ -139,16 +139,28 @@
                   <span class="en">Name:</span>
                 </label>
                 <input type="text" id="destination__input-name" name="name">
+                <div id="destination__name-error" class="error">
+                  <span class="sv">Fyll i det här fältet</span>
+                  <span class="en">Please enter your name</span>
+                </div>
                 <label id="destination__email-label" for="destination__input-email">
                   <span class="sv">E-post:</span>
                   <span class="en">E-mail:</span>
                 </label>
                 <input type="email" id="destination__input-email" name="email">
+                <div id="destination__email-error" class="error">
+                  <span class="sv">Ogiltigt format för email</span>
+                  <span class="en">Invalid email format</span>
+                </div>
                 <label id="destination__subject-label" for="destination__input-subjects">
                   <span class="sv">Välj ämne:</span>
                   <span class="en">Choose subject:</span>
                 </label>
                 <input list="destination__subjects-sv" name="subjects" id="destination__input-subjects">
+                <div id="destination__subjects-error" class="error">
+                  <span class="sv">Fyll i det här fältet</span>
+                  <span class="en">Please enter a destination</span>
+                </div>
                 <datalist id="destination__subjects-sv">
                   <option value="Restaurang">
                   <option value="Sevärdhet">
@@ -166,8 +178,12 @@
                   <option value="Other">
                 </datalist>
                 <textarea id="destination__comment" placeholder=""></textarea>
+                <div id="destination__comment-error" class="error">
+                  <span class="sv">Fyll i det här fältet</span>
+                  <span class="en">Please enter a comment</span>
+                </div>
                 <div id="destination__checkbox">
-                  <input required type="checkbox" id="accept" name="accept" value="Accept">
+                  <input type="checkbox" id="destination__accept" name="accept" value="Accept">
                     <label for="accept">
                       <span class="sv">Jag har läst och accepterar Travels
                         <a href="#" id="destination__rules"> regler</a>
@@ -176,6 +192,10 @@
                         <a href="#" id="destination__rules-en"> rules</a>
                       </span>
                     </label>
+                </div>
+                <div id="destination__accept-error" class="error">
+                  <span class="sv">Du måste acceptera villkoren</span>
+                  <span class="en">Accept the terms to continue</span>
                 </div>
                 <div id="destination__buttons">
                   <input class="sv destination__suggestion-button" type="submit" value="Skicka">
