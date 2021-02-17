@@ -1,4 +1,7 @@
 $(document).ready(() => {
+
+    $('.error').hide();
+
     if (!localStorage.getItem('lang')) {
         localStorage.setItem('lang', 'sv');
     }
@@ -122,6 +125,8 @@ $(document).ready(() => {
 
     $('.suggestion-button').on('click', function() {
 
+        $('.error').hide();
+
         if (validateMainForm()) {
             let currentPosts = JSON.parse(localStorage.getItem('posts'));
 
@@ -143,11 +148,10 @@ $(document).ready(() => {
             localStorage.setItem('posts', JSON.stringify(currentPosts));
 
             $(this).closest('form').find("input[type=text], textarea").val("");
+            $(this).closest('form').find("input[type=checkbox]").prop('checked', false);
             $('.main-form').hide();
-        } else {
-            alert('validering misslyckades');
-        }
-    })
+        } 
+    });
 
     // Localstorage for destinationpages
     const destinationPosts = [
@@ -246,20 +250,46 @@ const validateMainForm = () => {
     const newDestination = $('#suggestion').val();
     const newComment = $('#comment').val();
 
+    let valid = true;
+
     if (!isValidName(newName)) {
-        $('#name').val('Fyll i det här fältet');
-        return false;
-    } 
-    if (!isValidEmail(newEmail)) {
-        $('#email').val('Ogiltig email');
-        return false;
+        $('#name-error').show();
+        valid = false;
     }
-    alert('Validering okej');
-    return true;
+    if (!isValidEmail(newEmail)) {
+        $('#email-error').show();
+        valid = false;
+    }
+    if (!isValidDestination(newDestination)) {
+        $('#suggestion-error').show();
+        valid = false;
+    }
+    if (!isValidComment(newComment)) {
+        $('#comment-error').show();
+        valid = false;
+    }
+    if (!$('#accept').is(':checked')) {
+        $('#accept-error').show();
+        valid = false;
+    }
+
+    if (!valid) {
+        const currentLanguage = localStorage.getItem('lang');
+        if (currentLanguage === 'en') {
+            $('.sv').hide();
+        } else {
+            $('.en').hide();
+        }
+    }
+    return valid;
 }
 
-const emptyMainForm = () => $('.main-form').find("input[type=text], textarea").val("");
-
 const isValidName = name => name.length >= 1;
+
+const isValidEmail = email => email.length >= 1;
+
+const isValidDestination = destination => destination.length >= 1;
+
+const isValidComment = comment => comment.length >= 1;
 
 

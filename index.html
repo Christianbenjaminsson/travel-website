@@ -144,17 +144,33 @@
             <span class="en">Name:</span>
           </label>
           <input type="text" id="name" name="name">
+          <div id="name-error" class="error">
+            <span class="sv">Fyll i det här fältet</span>
+            <span class="en">Please enter your name</span>
+          </div>
           <label id="email-label" for="email">
             <span class="sv">Email:</span>
             <span class="en">Email address:</span>
           </label>
           <input type="text" id="email" name="email">
+          <div id="email-error" class="error">
+            <span class="sv">Ogiltigt format för email</span>
+            <span class="en">Invalid email format</span>
+          </div>
           <label id="suggestion-label" for="suggestion">
             <span class="sv">Förslag på resmål:</span>
             <span class="en">Your destination:</span>
           </label>
           <input type="text" id="suggestion" name="suggestion">
+          <div id="suggestion-error" class="error">
+            <span class="sv">Fyll i det här fältet</span>
+            <span class="en">Please enter a destination</span>
+          </div>
           <textarea id="comment" placeholder="Varför är ditt resmål så bra?"></textarea> 
+          <div id="comment-error" class="error">
+            <span class="sv">Fyll i det här fältet</span>
+            <span class="en">Please enter a comment</span>
+          </div>
           <div id="checkboxes">
             <input type="checkbox" id="accept" name="accept" value="Accept">
             <label for="accept">
@@ -165,6 +181,10 @@
                 <span class="en">rules</span>
               </a>
             </label>
+          </div>
+          <div id="accept-error" class="error">
+            <span class="sv">Du måste acceptera villkoren</span>
+            <span class="en">Accept the terms to continue</span>
           </div>
           <div id="buttons">
             <input class="sv suggestion-button" type="button" value="Skicka">
