@@ -286,7 +286,7 @@ const validateMainForm = () => {
 
 const isValidName = name => name.length >= 1;
 
-const isValidEmail = email => email.length >= 1;
+const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 const isValidDestination = destination => destination.length >= 1;
 
