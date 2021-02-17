@@ -61,7 +61,7 @@ h3 {
   color: #ffb570;
 }
 
-header {
+header, #admin {
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -129,6 +129,21 @@ header select {
   border-radius: 5px;
   margin-right: 25px;
   font-family: "Kumbh Sans", sans-serif;
+}
+
+#admin {
+  top: 100px;
+  justify-content: space-around;
+  opacity: 0.9;
+}
+
+#json-upload {
+  opacity: 1;
+}
+
+#clear-button {
+  width: 150px;
+  margin-top: 25px;
 }
 
 main,

@@ -11,22 +11,9 @@ $(document).ready(() => {
         setLanguage(lang);
     });
 
-    $('.main-form').hide();
-    $('.destination-input').on('click', () => {
-        $('.main-form').toggle();
-        $('#name').focus();
-    });
-
-    $('#icon').click(function(){
-        $('ul').toggleClass('show');
-    });
-
-    $('#destination__rules').click(function() {
-        window.open('../rules.html', 'popup', 'height=500,width=400,toolbar=no');
-    });
-
-    $('#destination__rules-en').click(function() {
-        window.open('../rules.html', 'popup', 'height=500,width=400,toolbar=no');
+    $('#admin').hide();
+    $('#admin-link').on('click', () => {
+        $('#admin').slideToggle(300);
     });
 
     $('.load-file').on('click', () => {
@@ -41,9 +28,8 @@ $(document).ready(() => {
             const reader = new FileReader();
             reader.onload = event => {
                 let lines = event.target.result;
-                alert(lines);
                 const newDestinations = JSON.parse(lines);
-                alert(newDestinations.destinations[0].description_sv);
+
                 newDestinations.destinations.forEach(destination => {
 
                     const newImage = destination.image;
@@ -61,8 +47,33 @@ $(document).ready(() => {
                 });
             };
             reader.readAsText(file);
-
+            $('#admin').slideUp(300);
         }
+    });
+
+    $('#clear-button').on('click', () => {
+        localStorage.removeItem('posts');
+        localStorage.setItem('posts', JSON.stringify(posts));
+        showPosts(posts);
+        $('#admin').slideUp(300);
+    });
+
+    $('.main-form').hide();
+    $('.destination-input').on('click', () => {
+        $('.main-form').toggle();
+        $('#name').focus();
+    });
+
+    $('#icon').click(function(){
+        $('ul').toggleClass('show');
+    });
+
+    $('#destination__rules').click(function() {
+        window.open('../rules.html', 'popup', 'height=500,width=400,toolbar=no');
+    });
+
+    $('#destination__rules-en').click(function() {
+        window.open('../rules.html', 'popup', 'height=500,width=400,toolbar=no');
     });
 
     const posts = [
@@ -127,6 +138,7 @@ const setLanguage = language => {
         $('.sv').hide();
         $('.en').show();
         $('#lang-switch').val('en');
+        $('#clear-button').val('Clear posts');
         $('#comment').attr('placeholder', 'Why should we visit your destination?');
         $('#destination__input-subjects').removeAttr('list');
         $('#destination__input-subjects').attr('list', 'destination__subjects-en');
@@ -135,11 +147,21 @@ const setLanguage = language => {
         $('.en').hide();
         $('.sv').show();
         $('#lang-switch').val('sv');
+        $('#clear-button').val('Rensa inlägg');
         $('#comment').attr('placeholder', 'Varför är ditt resmål så bra?');
         $('#destination__input-subjects').removeAttr('list');
         $('#destination__input-subjects').attr('list', 'destination__subjects-sv');
         localStorage.setItem('lang', 'sv');
     }
+};
+
+const showPosts = posts => {
+    $('#user-comments').empty();
+    posts.forEach(post => {
+        $('#user-comments').append('<span class="comment-name">'+post.name+'</span>');
+        $('#user-comments').append('<span class="comment-destination">'+post.destination+'</span>');
+        $('#user-comments').append('<span class="comment-why">'+post.comment+'</span>');
+    });
 };
 
 
