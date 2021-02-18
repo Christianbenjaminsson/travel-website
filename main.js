@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+
     $('.error').hide();
 
     if (!localStorage.getItem('lang')) {
@@ -9,7 +10,7 @@ $(document).ready(() => {
     setLanguage(localStorage.getItem('lang'));
 
 
-    if(localStorage.getItem('destinations')) {
+    if(localStorage.getItem('destinations') && window.location.href.endsWith('index.html')) {
         showDestinations(JSON.parse(localStorage.getItem('destinations')));
     }
 
