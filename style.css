@@ -60,7 +60,7 @@ h2,
 h3 {
   color: #ffb570;
 }
-
+/* header section */
 nav,
 #admin {
   position: fixed;
@@ -170,6 +170,8 @@ main {
   flex-grow: 0;
 }
 
+/* first page (index.html) */
+
 main .info {
   display: flex;
   flex-direction: column;
@@ -255,6 +257,7 @@ main .description {
   text-align: center;
 }
 
+/* form section on first page */
 main #main-input {
   display: flex;
   flex-direction: column;
@@ -379,6 +382,7 @@ input[type="submit"]:hover {
   transition: 0.3s ease-in;
 }
 
+/* section with user input */
 #viewer-favourites {
   display: flex;
   flex-direction: column;

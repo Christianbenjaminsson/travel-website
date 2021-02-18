@@ -24,6 +24,7 @@ $(document).ready(() => {
         $('#admin').slideToggle(300);
     });
 
+    // load json-file
     $('.load-file').on('click', () => {
         input = document.getElementById('file-input');
 
@@ -52,6 +53,7 @@ $(document).ready(() => {
         }
     });
 
+    // clear user's posts from local storage
     $('#clear-button').on('click', () => {
         localStorage.removeItem('posts');
         localStorage.removeItem('destinationPosts');
@@ -83,14 +85,6 @@ $(document).ready(() => {
         window.open('../rules.html', 'popup', 'height=500,width=400,toolbar=no');
     });
 
-    $('#location__stockholm').click(function(){
-        window.location = './destinations/stockholm.html';
-    });
-
-    $('#location__newyork').click(function(){
-        window.location = './destinations/new-york.html';
-    });
-
     const posts = [
         {
             name: "Helene",
@@ -115,7 +109,7 @@ $(document).ready(() => {
     
     const postsToShow = JSON.parse(localStorage.getItem('posts'));
 
-
+    // show user suggestions on index.html
     for (let i = 0; i < postsToShow.length; i++) {
         $('#user-comments').append('<span class="comment-name">'+postsToShow[i].name+'</span>');
         $('#user-comments').append('<span class="comment-destination">'+postsToShow[i].destination+'</span>');
@@ -356,11 +350,3 @@ const validateDestinationForm = () => {
     }
     return destinationValid;
 }
-
-const destinationIsValidName = destinationName => destinationName.length >= 1;
-
-const destinationIsValidEmail = destinationEmail => destinationEmail.length >= 1;
-
-const destinationIsValidDestination = destinationSubjects => destinationSubjects.length >= 1;
-
-const destinationIsValidComment = destinationComment => destinationComment.length >= 1;
